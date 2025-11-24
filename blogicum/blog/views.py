@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.shortcuts import render, get_object_or_404
 
 def index(request):
     template_name = 'blog/index.html'
     return render(request, template_name)
 
-def post_detail(request):
+def post_detail(request, id):
     template_name = 'blog/detail.html'
-    return render(request, template_name)
+    return render(request, template_name, posts)
 
 def category_posts(request):
     template_name = 'blog/category.html'

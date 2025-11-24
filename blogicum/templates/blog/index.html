@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 {% load static %}
-<html lang="ru"> 
-  <head>    
+
+<html lang="ru">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{% static 'img/fav/favicon.ico' %}" type="image">
@@ -11,21 +13,21 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>Лента записей</title>
   </head>
-  <body>	   
+  <body>
     <header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
         <div class="container">
           <a class="navbar-brand" href="{% url 'blog:index' %}">
             <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
             Блогикум
-          </a>        
+          </a>
           <ul class="nav  nav-pills">
             <li class="nav-item">
               <a class="nav-link active" href="{% url 'blog:index' %}">
                 Лента записей
               </a>
             </li>
-            <li class="nav-item">              
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'pages:about' %}">
                 О проекте
               </a>
@@ -35,19 +37,19 @@
                 Наши правила
               </a>
             </li>
-          </ul>      
+          </ul>
         </div>
-      </nav> 
+      </nav>
     </header>
     <main>
       <div class="container py-5">
-        <h1>Лента записей</h1>                        
+        <h1>Лента записей</h1>
         <!-- Перебираем в цикле все посты -->
         <hr>
         <article>
           <ul>
             <li>
-              Место: Остров отчаянья              
+              Место: Остров отчаянья
             </li>
             <li>
               Дата: 25 октября 1659 года
@@ -55,18 +57,18 @@
             <li>
               Категория: <a href="not-my-day">not-my-day</a>
             </li>
-          </ul>          
+          </ul>
           <!-- Первые 10 слов -->
           <p>
             Всю ночь и весь день шел дождь и дул сильный ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' 0 %}">Читать полный текст</a>
         </article>
         <hr>
         <article>
           <ul>
             <li>
-              Место: Остров отчаянья              
+              Место: Остров отчаянья
             </li>
             <li>
               Дата: 1 октября 1659 года
@@ -79,13 +81,13 @@
           <p>
             Проснувшись поутру, я увидел, что наш корабль сняло с мели ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' 1 %}">Читать полный текст</a>
         </article>
         <hr>
         <article>
           <ul>
             <li>
-              Место: Остров отчаянья              
+              Место: Остров отчаянья
             </li>
             <li>
               Дата: 30 сентября 1659 года.
@@ -98,7 +100,7 @@
           <p>
             Наш корабль, застигнутый в открытом море страшным штормом, потерпел крушение. ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' 2 %}">Читать полный текст</a>
         </article>                 
       </div>
     </main>
